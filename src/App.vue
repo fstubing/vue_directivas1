@@ -183,7 +183,7 @@ export default {
         borderRadius: "0px",
         color: "white",
         fontFamily: "Helvetica",
-        fontSize: "medium",
+        fontSize: "Medium",
         texto: "",
       },
     };
