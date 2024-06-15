@@ -75,11 +75,15 @@
           <select
             id="tipografia"
             class="form-select"
-            v-model="figura.fontFamily"
+            v-model="figura.fontFamilyBase"
           >
-            <option value="Helvetica" selected>Helvetica</option>
-            <option value="Roboto">Roboto</option>
-            <option value="sans-serif">Sans-serif</option>
+            <option
+              v-for="(fuente, i) in figura.fontFamily"
+              :key="i"
+              :value="fuente"
+            >
+              {{ fuente }}
+            </option>
           </select>
         </div>
 
@@ -157,7 +161,7 @@
           borderRadius: figura.borderRadius + 'px',
           color: figura.color,
           fontSize: figura.fontSize,
-          fontFamily: figura.fontFamily,
+          fontFamily: figura.fontFamilyBase,
         }"
       >
         <div
@@ -182,7 +186,8 @@ export default {
         colorDeFondo: "green",
         borderRadius: "0px",
         color: "white",
-        fontFamily: "Helvetica",
+        fontFamily: ["Helvetica", "Roboto", "sans-serif"],
+        fontFamilyBase: "Helvetica",
         fontSize: "Medium",
         texto: "",
       },
